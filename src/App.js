@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import logo from 'assets/logo.svg';
 import './App.css';
+import FadeIn from "react-fade-in";
+import Landing from './components/Landing';
+
 
 function App() {
+  const [loadState, setState]=useState(true);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {{loadState}?
+        <header className="App-header" >
+          <Loading onLoad={()=>setState(false)}/>
+        </header>:
+          <FadeIn delay={500} transitionDuration={800} >
+            <Landing />
+          </FadeIn>
+      }
     </div>
   );
+}
+
+function Loading(props) {
+  useEffect(()=>{
+    setTimeout(()=>
+    props.onLoad(),5000)
+  })
+  return(
+      <div>
+        <img className="App-logo" src={logo} alt='loading'/>
+      </div>
+  )
 }
 
 export default App;
