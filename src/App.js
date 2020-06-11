@@ -1,34 +1,45 @@
 import React, {useEffect, useState} from 'react';
-import logo from 'assets/logo.svg';
 import './App.css';
+import HashLoader from "react-spinners/HashLoader";
 import FadeIn from "react-fade-in";
 import Landing from './components/Landing';
 
 
 function App() {
   const [loadState, setState]=useState(true);
-  return (
-    <div className="App">
-      {{loadState}?
-        <header className="App-header" >
-          <Loading onLoad={()=>setState(false)}/>
-        </header>:
-          <FadeIn delay={500} transitionDuration={800} >
-            <Landing />
-          </FadeIn>
-      }
-    </div>
-  );
+  if (loadState===true){
+      return (
+        <header className='App-header'>
+            <Loading onLoad={setState}/>
+        </header>
+      )
+  }
+  else {
+      return (
+          <div className='App'>
+              <FadeIn
+                  delay={500}
+                  transitionDuration={800}
+              >
+                  <Landing />
+              </FadeIn>
+          </div>
+      )
+  }
 }
 
 function Loading(props) {
   useEffect(()=>{
     setTimeout(()=>
-    props.onLoad(),5000)
-  })
+    props.onLoad(false),3000)
+  });
   return(
       <div>
-        <img className="App-logo" src={logo} alt='loading'/>
+          <HashLoader
+              size={70}
+              color={"#F8E71C"}
+              loading={true}
+          />
       </div>
   )
 }
