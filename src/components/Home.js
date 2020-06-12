@@ -5,6 +5,8 @@ import Fab from '@material-ui/core/Fab';
 import ReactCanvasNest from "react-canvas-nest";
 import {NavLink} from "react-router-dom";
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import {typingText} from '../constants';
+import {nestConfig} from '../constants';
 
 const useStyles = makeStyles((theme)=>({
     container:{
@@ -15,7 +17,8 @@ const useStyles = makeStyles((theme)=>({
     canvasNest:{
         width:'100%',
         height:'100%',
-        opacity:1
+        opacity:1,
+        background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)'
     },
     wrapper:{
         paddingTop:'64px',
@@ -42,29 +45,15 @@ const useStyles = makeStyles((theme)=>({
     },
 }))
 
-const config ={
-    count: 80,
-    pointR: 3,
-    pointColor:'64,196,255',
-    dist: 100,
-    lineColor:'238,255,65',
-    lineWidth:4,
-    follow: true,
-    mouseDist: 20000
-}
-
-const items = ['I am Indranil Bit.', 'Competitive Coder.','Web Developer.','Data Enthusiastic.'];
-
 function Home() {
     const classes=useStyles();
-
     return(
         <div className={classes.container}>
-            <ReactCanvasNest className={classes.canvasNest} config={config} />
+            <ReactCanvasNest className={classes.canvasNest} config={nestConfig} />
             <div className={classes.wrapper}>
                 <ReactTypingEffect
                     className={classes.heading}
-                    text={items}
+                    text={typingText}
                     eraseDelay={50}
                     typingDelay={50}
                     cursorClassName={classes.cursor}

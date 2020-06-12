@@ -2,11 +2,13 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import { useSpring, animated } from 'react-spring';
 import Typography from "@material-ui/core/Typography";
+import Zoom from '@material-ui/core/Zoom';
 import FadeIn from "react-fade-in";
 import {NavLink} from "react-router-dom";
 import Fab from "@material-ui/core/Fab";
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import {aboutMe} from '../constants';
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -67,14 +69,17 @@ function About() {
     return(
         <div className={classes.container}>
             <div className={classes.wrapper}>
-                <div className={classes.profile}>
-                    <animated.div
-                        className="card"
-                        onMouseMove={({clientX: x, clientY: y}) => set({xys: calc(x, y)})}
-                        onMouseLeave={() => set({xys: [0, 0, 1]})}
-                        style={{transform: props.xys.interpolate(trans)}}
-                    />
-                </div>
+                <Zoom in={true} style={{transitionDelay:'1000ms'}}>
+                    <div className={classes.profile}>
+                        <animated.div
+                            className="card"
+                            onMouseMove={({clientX: x, clientY: y}) => set({xys: calc(x, y)})}
+                            onMouseLeave={() => set({xys: [0, 0, 1]})}
+                            style={{transform: props.xys.interpolate(trans)}}
+                        />
+                    </div>
+                </Zoom>
+
                 <FadeIn
                     delay={500}
                     transitionDuration={800}
@@ -87,37 +92,21 @@ function About() {
                     >
                         About Me
                     </Typography>
+                    {aboutMe.map((text)=>(
+                        <Typography
+                            align='left'
+                            variant='body1'
+                            className={classes.text}
+                        >
+                            {text}
+                        </Typography>
+                    ))}
                     <Typography
                         align='left'
                         variant='body1'
                         className={classes.text}
                     >
-                        Hello there! I am Indranil Bit and I am a Computer Science student
-                        currently pursuing my Bachelor of Technology (B.Tech) degree from
-                        Indian Institute of Engineering Science and Technology, Shibpur
-                        (IIEST, Shibpur), West Bengal and will be graduating in the year 2021 (Expected).
-
-                    </Typography>
-                    <Typography>
-
-                    </Typography>
-                    <Typography
-                        align='left'
-                        variant='body1'
-                        className={classes.text}
-                    >
-                        Apart from that, I have a keen interest in Data Structures & Algorithms and
-                        also love Problem Solving.
-                        I enjoy building Web Application and Web Services in the various cloud computing
-                        platform. Also Have worked with React, NodeJs, JavaScript, CSS, HTML5, PHP, MongoDB, MySQL, UI/UX design
-                        and many other tools to create aesthetically pleasing, responsive and functional websites.
-                    </Typography>
-                    <Typography
-                        align='left'
-                        variant='body1'
-                        className={classes.text}
-                    >
-                        Reach me at <a href={'mailto:iam@ibit98.tech'}>iam@ibit.tech</a>
+                        Reach me at <a href={'mailto:iam@ibit98.tech'}>iam@ibit98.tech</a>
                     </Typography>
                 </FadeIn>
             </div>

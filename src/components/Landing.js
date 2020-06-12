@@ -13,6 +13,7 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import AppBar from "@material-ui/core/AppBar";
 import Home from "./Home";
 import About from "./About";
+import Skills from  "./Skills"
 import logo from '../assets/android-chrome-192x192.png'
 
 const Index = [
