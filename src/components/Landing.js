@@ -30,7 +30,7 @@ const Index = [
     {
         path :'/skills',
         name :'Skills',
-        Component: Home
+        Component: Skills
     },
     {
         path :'/projects',

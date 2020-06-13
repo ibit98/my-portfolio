@@ -7,13 +7,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "lodash-es": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-spinners": "^0.8.3",
     "react-spring": "^8.0.27",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "react-use-gesture": "^7.0.15"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,7 +42,6 @@
     "@material-ui/core": "^4.10.1",
     "react-canvas-nest": "^1.1.1",
     "react-fade-in": "^1.1.0",
-    "react-typing-effect": "^2.0.3",
-    "react-use-gesture": "^7.0.15"
+    "react-typing-effect": "^2.0.3"
   }
 }
