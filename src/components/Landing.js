@@ -13,7 +13,8 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import AppBar from "@material-ui/core/AppBar";
 import Home from "./Home";
 import About from "./About";
-import Skills from  "./Skills"
+import Skills from  "./Skills";
+import Contact from "./Contact";
 import logo from '../assets/android-chrome-192x192.png'
 
 const Index = [
@@ -40,7 +41,7 @@ const Index = [
     {
         path :'/contact',
         name :'Contact',
-        Component: Home
+        Component: Contact
     }
 ]
 

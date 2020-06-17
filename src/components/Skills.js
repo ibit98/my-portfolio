@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme)=>({
         width: '100%',
         height: '100%',
         boxSizing: "border-box",
-        cursor: "url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto",
+        cursor: "url('./assets/cursor.png') 39 39, auto",
 
     },
     rootDiv:{
