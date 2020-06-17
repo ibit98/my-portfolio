@@ -99,7 +99,7 @@ function Contact() {
        fetch(`https://apilayer.net/api/check?access_key=${API_KEY}&email=${email}&smtp=1&format=1`)
            .then(res=>res.json())
            .then(res=> {
-           if (res.format_valid === true) {
+           if (res.smtp_check === true) {
                setValid(true);
                const data = new FormData();
                data.append('name',`${name}`);
