@@ -68,3 +68,50 @@ export const cards =[
         url: 'https://www.technoscore.com/images/services/node-js-icon.png'
     },
 ]
+export const social=[
+    {
+        name: 'Facebook',
+        icon:'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico',
+        profile:'https://www.facebook.com/indranil.bit/'
+    },
+    {
+        name: 'Instagram',
+        icon: 'https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico',
+        profile: 'https://www.instagram.com/indranil.bit/'
+    },
+    {
+        name: 'LinkedIn',
+        icon: 'https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca',
+        profile: 'https://www.linkedin.com/in/indranil-bit/'
+    },
+    {
+        name: 'GitHub',
+        icon: 'https://image.flaticon.com/icons/svg/25/25231.svg',
+        profile: 'https://github.com/ibit98'
+    },
+    {
+        name: 'Stack Overflow',
+        icon: 'https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196',
+        profile: 'https://stackoverflow.com/users/13745530/indranil-bit'
+    },
+    {
+        name: 'Quora',
+        icon: 'https://qsfs.fs.quoracdn.net/-3-images.favicon.ico-26-ae77b637b1e7ed2c.ico',
+        profile: 'https://www.quora.com/profile/Indranil-Bit'
+    },
+    {
+        name: 'Codeforces',
+        icon: 'https://sta.codeforces.com/s/40186/apple-icon-76x76.png',
+        profile: 'https://codeforces.com/profile/ibit'
+    },
+    {
+        name: 'CodeChef',
+        icon: 'https://avatars1.githubusercontent.com/u/11960354?s=460&v=4',
+        profile: 'https://stackoverflow.com/users/13745530/indranil-bit'
+    },
+    {
+        name: 'HackerRank',
+        icon:'https://hrcdn.net/community-frontend/assets/favicon-ddc852f75a.png',
+        profile:'https://www.hackerrank.com/indranil_bit'
+    }
+]

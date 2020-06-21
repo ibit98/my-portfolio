@@ -3,8 +3,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import {NavLink} from "react-router-dom";
 import Fab from "@material-ui/core/Fab";
 import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
-import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
-import Background from '../assets/01.jpg'
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
@@ -14,6 +12,13 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from '@material-ui/lab/Alert';
 import Card from "@material-ui/core/Card";
+import Typography from "@material-ui/core/Typography";
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import PersonPinCircleIcon from '@material-ui/icons/PersonPinCircle';
+import IconButton from "@material-ui/core/IconButton";
+import {social} from '../constants';
+import Tooltip from "@material-ui/core/Tooltip";
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -28,9 +33,11 @@ const useStyles = makeStyles((theme)=>({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        backgroundImage: `url(${Background})` ,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        alignItems: "center",
+        // backgroundImage: `url(${Background})` ,
+        // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+        background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)'
     },
     wrapper:{
         display: "flex",
@@ -47,41 +54,65 @@ const useStyles = makeStyles((theme)=>({
     },
     form:{
         minWidth:'330px',
-        minHeight: '350px',
+        minHeight: '320px',
         display: "flex" ,
         padding: '.5rem',
         justifyContent: "space-around",
         flexDirection: "column",
-        backgroundColor: "#bbdefb"
+        backgroundColor: "#eceff1",
+        marginBottom: '3%'
     },
-    profile:{
-        minWidth:'350px',
-        minHeight: '350px',
+    bar:{
+        height: '25%',
+        padding: '.5rem',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+        overflow: "hidden"
     },
-    description:{
-        textAlign: "center",
-        padding:'4vw',
-        maxWidth: '40rem',
-    },
-    text:{
-        fontFamily:'Lato',
-        fontWeight: 20
-    },
-    heading:{
-        fontFamily : 'Raleway',
-        fontWeight: "bold",
-        fontSize: 50,
-        color: '#f46524',
+    // img:{
+    //     position: "relative",
+    //     right: '-10%',
+    //     bottom: 0,
+    //     height: '85%',
+    //     opacity: '.4',
+    //     zIndex: -1,
+    // },
+    tile:{
+
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: '#282c34',
+        paddingLeft: '2rem',
+        paddingRight:'2rem'
     },
     fab: {
         width:'30vw',
         display: "flex",
         flexDirection: "row",
         alignSelf: "center" ,
-        justifyContent: "space-between",
+        justifyContent: "center",
         padding: '.5rem'
     },
 }))
+
+const useStylesBootstrap = makeStyles((theme) => ({
+    arrow: {
+        color: theme.palette.common.black,
+    },
+    tooltip: {
+        backgroundColor: theme.palette.common.black,
+    },
+}));
+
+function BootstrapTooltip(props) {
+    const classes = useStylesBootstrap();
+
+    return <Tooltip arrow classes={classes} {...props} />;
+}
 
 const API_KEY = 'a9ce1cf6cdc26d53b592f8b2d9358109';
 
@@ -120,6 +151,7 @@ function Contact() {
                xhr.send(data);
            } else {
                 setValid(false);
+                setToggle(false);
            }
        })
     }
@@ -138,75 +170,132 @@ function Contact() {
                 </Alert>
             </Snackbar>
             <div className={classes.wrapper}>
-                <Card className={classes.form}>
-                    <form onSubmit={(e)=>handleForm(e)} className={classes.form}>
-                        <FormControl variant="outlined">
-                            <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                            <OutlinedInput
-                                label="Name"
-                                value={name}
-                                onChange={(e)=>{setName(e.target.value)}}
-                                required
-                            />
-                        </FormControl>
-                        <FormControl variant="outlined">
-                            <InputLabel htmlFor="component-outlined">E-Mail</InputLabel>
-                            <OutlinedInput
-                                label="E-Mail"
-                                value={email}
-                                type='email'
-                                onChange={(e)=>{setMail(e.target.value)}}
-                                required
-                                error={!validEmail}
-                            />
-                            <FormHelperText error >{validEmail===true?"":"Invalid Email"}</FormHelperText>
-                        </FormControl>
-                        <FormControl variant="outlined">
-                            <InputLabel htmlFor="component-outlined">Message</InputLabel>
-                            <OutlinedInput
-                                label="Message"
-                                value={msg}
-                                required
-                                onChange={(e)=>setMsg(e.target.value)}
-                                multiline />
-                        </FormControl>
-                        <Button
-                            id='123'
-                            type='submit'
-                            variant="contained"
-                            color="primary"
-                            disabled={toggle}
-                            className={classes.button}
-                            endIcon={<SendIcon/>}
-                        >
-                            {toggle===false?"Send":"Sending..."}
-                        </Button>
-                    </form>
+                    <Card className={classes.form}>
+                        <form onSubmit={(e)=>handleForm(e)} className={classes.form}>
+                            <FormControl variant="outlined">
+                                <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                                <OutlinedInput
+                                    label="Name"
+                                    value={name}
+                                    onChange={(e)=>{setName(e.target.value)}}
+                                    required
+                                />
+                            </FormControl>
+                            <FormControl variant="outlined">
+                                <InputLabel htmlFor="component-outlined">E-Mail</InputLabel>
+                                <OutlinedInput
+                                    label="E-Mail"
+                                    value={email}
+                                    type='email'
+                                    onChange={(e)=>{setMail(e.target.value)}}
+                                    required
+                                    error={!validEmail}
+                                />
+                                <FormHelperText error >{validEmail===true?"":"Invalid Email"}</FormHelperText>
+                            </FormControl>
+                            <FormControl variant="outlined">
+                                <InputLabel htmlFor="component-outlined">Message</InputLabel>
+                                <OutlinedInput
+                                    label="Message"
+                                    value={msg}
+                                    required
+                                    onChange={(e)=>setMsg(e.target.value)}
+                                    multiline />
+                            </FormControl>
+                            <Button
+                                id='123'
+                                type='submit'
+                                variant="contained"
+                                color="primary"
+                                disabled={toggle}
+                                className={classes.button}
+                                endIcon={<SendIcon/>}
+                            >
+                                {toggle===false?"Send":"Sending..."}
+                            </Button>
+                        </form>
+                    </Card>
+                    <Card className={classes.form}>
 
-                </Card>
+                            <Card className={classes.bar}>
+                                <div>
+                                    <Typography variant='caption' color='secondary'>
+                                        E-Mail
+                                    </Typography>
+                                    <Typography variant='body1'>
+                                        iam@ibit98.tech
+                                    </Typography>
+                                </div>
+                                <div>
+                                    <MailOutlineIcon opacity={.5}/>
+                                </div>
+                            </Card>
+                            <Card className={classes.bar}>
+                                <div>
+                                    <Typography variant='caption' color='secondary'>
+                                        Whatsapp
+                                    </Typography>
+                                    <Typography variant='body1'>
+                                        +91 9434 4832 03
+                                    </Typography>
+                                </div>
+
+                                <div><WhatsAppIcon opacity={.5}/></div>
+                            </Card>
+                            <Card className={classes.bar}>
+                                <div>
+                                    <Typography variant='caption' color='secondary'>
+                                        Lets Have Coffee
+                                    </Typography>
+                                    <Typography variant='body1'>
+                                        Kolkata, India
+                                    </Typography>
+                                </div>
+                                <div>
+                                    <PersonPinCircleIcon opacity={.5}/>
+                                </div>
+                            </Card>
+
+
+                    </Card>
+            </div>
+            <Card className={classes.tile}>
+                {social.map(({name,icon,profile})=>
+                    <BootstrapTooltip title={name}>
+                        <a href={profile} target='_blank' >
+                            <IconButton >
+                                <img
+                                    width='25px'
+                                    height='25px'
+                                    src={icon}
+                                    alt='icon'
+                                />
+                            </IconButton>
+                        </a>
+                    </BootstrapTooltip>
+                )}
+
+            </Card>
+            <div>
+                <Typography
+                    variant='caption'
+                    style={{color:'#ff7043',fontFamily:'Source Sans Pro'}}>
+                    Handcrafted with {'</>'} and love by Indranil Bit
+                </Typography>
             </div>
             <div className={classes.fab}>
                 <div>
-                    <NavLink to={'/'}>
-                        <Fab
-                            size="medium"
-                            color="secondary"
-                            aria-label="add"
-                        >
-                            <ArrowBackIosRoundedIcon/>
-                        </Fab>
-                    </NavLink>
-                </div>
-                <div>
-                    <NavLink to={'/skills'}>
-                        <Fab
-                            size="medium"
-                            color="secondary"
-                            aria-label="add"
-                        >
-                            <ArrowForwardIosRoundedIcon/>
-                        </Fab>
-                    </NavLink>
+                    <BootstrapTooltip title='Projects'>
+                        <NavLink to={'/projects'}>
+                            <Fab
+                                size="medium"
+                                color="secondary"
+                                aria-label="add"
+                            >
+                                <ArrowBackIosRoundedIcon/>
+                            </Fab>
+                        </NavLink>
+                    </BootstrapTooltip>
                 </div>
             </div>
         </div>

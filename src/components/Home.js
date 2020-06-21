@@ -7,6 +7,7 @@ import {NavLink} from "react-router-dom";
 import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 import {typingText} from '../constants';
 import {nestConfig} from '../constants';
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme)=>({
     container:{
@@ -45,6 +46,22 @@ const useStyles = makeStyles((theme)=>({
     },
 }))
 
+const useStylesBootstrap = makeStyles((theme) => ({
+    arrow: {
+        color: theme.palette.common.black,
+    },
+    tooltip: {
+        backgroundColor: theme.palette.common.black,
+    },
+}));
+
+function BootstrapTooltip(props) {
+    const classes = useStylesBootstrap();
+
+    return <Tooltip arrow classes={classes} {...props} />;
+}
+
+
 function Home() {
     const classes=useStyles();
     return(
@@ -59,15 +76,17 @@ function Home() {
                     cursorClassName={classes.cursor}
                 />
                 <div className={classes.fab}>
-                    <NavLink     to={'about'}>
-                        <Fab
-                            size="medium"
-                            color="secondary"
-                            aria-label="add"
-                        >
-                            <ArrowForwardIosRoundedIcon/>
-                        </Fab>
-                    </NavLink>
+                    <BootstrapTooltip title='About'>
+                        <NavLink     to={'about'}>
+                            <Fab
+                                size="medium"
+                                color="secondary"
+                                aria-label="add"
+                            >
+                                <ArrowForwardIosRoundedIcon/>
+                            </Fab>
+                        </NavLink>
+                    </BootstrapTooltip>
                 </div>
             </div>
         </div>

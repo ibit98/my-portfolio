@@ -9,6 +9,7 @@ import {NavLink} from "react-router-dom";
 import Fab from "@material-ui/core/Fab";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme)=>({
     container:{
@@ -23,9 +24,9 @@ const useStyles = makeStyles((theme)=>({
     },
     wrapper:{
         width:'100%',
-        height: '100%',
+        maxWidth:'100vw',
         display: "flex",
-        overflow: "visible",
+        overflow: "hidden",
         flexDirection: "column",
         padding: '5vmin',
         justifyContent: "center",
@@ -85,6 +86,22 @@ const useStyles = makeStyles((theme)=>({
     }
 }))
 
+const useStylesBootstrap = makeStyles((theme) => ({
+    arrow: {
+        color: theme.palette.common.black,
+    },
+    tooltip: {
+        backgroundColor: theme.palette.common.black,
+    },
+}));
+
+function BootstrapTooltip(props) {
+    const classes = useStylesBootstrap();
+
+    return <Tooltip arrow classes={classes} {...props} />;
+}
+
+
 function Skills() {
     const classes = useStyles();
     const [index, setIndex]=useState(0);
@@ -109,26 +126,30 @@ function Skills() {
             </div>
             <div className={classes.fab}>
                 <div>
-                    <NavLink to={'/about'}>
-                        <Fab
-                            size="medium"
-                            color="secondary"
-                            aria-label="add"
-                        >
-                            <ArrowBackIosRoundedIcon/>
-                        </Fab>
-                    </NavLink>
+                    <BootstrapTooltip title='About'>
+                        <NavLink to={'/about'}>
+                            <Fab
+                                size="medium"
+                                color="secondary"
+                                aria-label="add"
+                            >
+                                <ArrowBackIosRoundedIcon/>
+                            </Fab>
+                        </NavLink>
+                    </BootstrapTooltip>
                 </div>
                 <div>
-                    <NavLink to={'/'}>
-                        <Fab
-                            size="medium"
-                            color="secondary"
-                            aria-label="add"
-                        >
-                            <ArrowForwardIosRoundedIcon/>
-                        </Fab>
-                    </NavLink>
+                    <BootstrapTooltip title='Projects'>
+                        <NavLink to={'/'}>
+                            <Fab
+                                size="medium"
+                                color="secondary"
+                                aria-label="add"
+                            >
+                                <ArrowForwardIosRoundedIcon/>
+                            </Fab>
+                        </NavLink>
+                    </BootstrapTooltip>
                 </div>
             </div>
         </div>
