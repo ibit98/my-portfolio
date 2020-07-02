@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Crafted purely using HTML, CSS and vanilla JavaScript.
 
-![Screenshot of website]
+![Screenshot of website](/src/assets/preview.mp4)
 
 ### Hosted on AWS EC2:
 https://www.ibit98.com
