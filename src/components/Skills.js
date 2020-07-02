@@ -140,7 +140,7 @@ function Skills() {
                 </div>
                 <div>
                     <BootstrapTooltip title='Projects'>
-                        <NavLink to={'/'}>
+                        <NavLink to={'/projects'}>
                             <Fab
                                 size="medium"
                                 color="secondary"

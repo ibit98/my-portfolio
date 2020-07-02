@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Personal Website
+
+Crafted purely using HTML, CSS and vanilla JavaScript.
+
+![Screenshot of website]
+
+### Hosted on AWS EC2:
+https://www.ibit98.com
 ## Available Scripts
 
 In the project directory, you can run:

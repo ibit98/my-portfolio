@@ -31,7 +31,7 @@ function App() {
 function Loading(props) {
   useEffect(()=>{
     setTimeout(()=>
-    props.onLoad(false),3500)
+    props.onLoad(false),300)
   });
   return(
       <div>

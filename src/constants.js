@@ -86,7 +86,7 @@ export const social=[
     },
     {
         name: 'GitHub',
-        icon: 'https://image.flaticon.com/icons/svg/25/25231.svg',
+        icon: 'https://www.flaticon.com/premium-icon/icons/svg/3015/3015838.svg',
         profile: 'https://github.com/ibit98'
     },
     {
@@ -114,4 +114,43 @@ export const social=[
         icon:'https://hrcdn.net/community-frontend/assets/favicon-ddc852f75a.png',
         profile:'https://www.hackerrank.com/indranil_bit'
     }
+]
+
+export const certificate=[
+    {
+        "cName":"Software Engineering Virtual Experience",
+        "orgLogo":"https://media-exp1.licdn.com/dms/image/C510BAQF_zIelQWSBvw/company-logo_100_100/0?e=1601510400&v=beta&t=UcUaekKHVDjvLWvWyci_5bD-gNQc4iTSD7LxmrwxFPU",
+        "orgName":"JPMorgan Chase & Co.",
+        "issueDate":"Issued Jun 2020",
+        "cred":"Credential ID cQLyQ9Ntm3eEFkJ4a",
+        "link":"https://insidesherpa.s3.amazonaws.com/completion-certificates/JP%20Morgan/R5iK7HMxJGBgaSbvk_JPMorgan%20Chase_cQLyQ9Ntm3eEFkJ4a_completion_certificate.pdf",
+        "img":"https://pbs.twimg.com/media/Eb8SaLfUMAIUqEq?format=jpg&name=medium",
+    },
+    {
+        "cName":"Problem Solving - Intermidiate",
+        "orgLogo":"https://media-exp1.licdn.com/dms/image/C560BAQG4BhmLy-bF7w/company-logo_100_100/0?e=1600905600&v=beta&t=3AO8f5jIOo38Oj8RONc8sUhw6RUADwCSl3wSShwT7hg",
+        "orgName":"HackerRank",
+        "issueDate":"Issued Jun 2020",
+        "cred":"Credential ID 9B7C2A52AC50",
+        "link":"https://www.hackerrank.com/certificates/9b7c2a52ac50",
+        "img":"https://pbs.twimg.com/media/Eb4_XaHU8AIPbxA?format=jpg&name=large",
+    },
+    {
+        cName:"The Web Developer Bootcamp",
+        orgLogo:"https://media-exp1.licdn.com/dms/image/C560BAQHsf3HKjPRdGQ/company-logo_100_100/0?e=1601510400&v=beta&t=Zt2gmlX-nDM5HlktMx8ykCSkR4x_yBBo_qpG_2hF8R4",
+        orgName:"Udemy",
+        issueDate:"Issued Nov 2019",
+        cred:"Credential ID UC-GSHS6L0B",
+        link:"http://ude.my/UC-GSHS6L0B",
+        img:"https://pbs.twimg.com/media/Eb8S9zcUMAAVvC6?format=jpg&name=small",
+    },
+    {
+        cName:"CCDSAP",
+        orgLogo:"https://media-exp1.licdn.com/dms/image/C560BAQGly2tw6ab4YQ/company-logo_100_100/0?e=1601510400&v=beta&t=sTA9o1XZNTVx-_UWqvqb2xHHa30Ka0otomArDiRBfvk",
+        orgName:"CodeChef",
+        issueDate:"Issued Sep 2019",
+        cred:"Credential ID 4e3b2a2 ( User ID - ibit98 )",
+        link:"https://www.codechef.com/certificates/public/4e3b2a2",
+        img:"https://pbs.twimg.com/media/Eb8VK8IVAAAqZuP?format=jpg&name=small",
+    },
 ]

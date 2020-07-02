@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme)=>({
 
     },
     form:{
-        minWidth:'330px',
-        minHeight: '320px',
+        minWidth:'18em',
+        minHeight: '18em',
         display: "flex" ,
         padding: '.5rem',
         justifyContent: "space-around",
@@ -233,7 +233,7 @@ function Contact() {
                             <Card className={classes.bar}>
                                 <div>
                                     <Typography variant='caption' color='secondary'>
-                                        Whatsapp
+                                        WhatsApp
                                     </Typography>
                                     <Typography variant='body1'>
                                         +91 9434 4832 03

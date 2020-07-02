@@ -14,6 +14,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Home from "./Home";
 import About from "./About";
 import Skills from  "./Skills";
+import Projects from "./Projects";
 import Contact from "./Contact";
 import logo from '../assets/android-chrome-192x192.png'
 
@@ -36,7 +37,7 @@ const Index = [
     {
         path :'/projects',
         name : 'Projects',
-        Component: Home
+        Component: Projects
     },
     {
         path :'/contact',
