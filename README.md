@@ -7,7 +7,7 @@ Crafted purely using HTML, CSS and vanilla JavaScript.
 ![Screenshot of website](/src/assets/preview.mp4)
 
 ### Hosted on AWS EC2:
-https://www.ibit98.com
+https://www.ibit98.tech
 ## Available Scripts
 
 In the project directory, you can run:
